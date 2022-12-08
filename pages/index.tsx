@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         description={"Next.js + TypeScript + Valtio Starter"}
       />
 
-      Next.js + TypeScript + Valtio Starter
+    
     </>
   )
 }
