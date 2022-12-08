@@ -1,6 +1,11 @@
 # G.
 A Graceful Mix Space Theme
 
+<pre align="center">
+I am developing in public. But this theme is not ready for use.
+🧪 Working in Progress
+</pre>
+
 ## Features
 
 - [x] SSR Support
