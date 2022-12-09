@@ -24,6 +24,7 @@
 
 .container {
   min-width: 300px;
+  max-width: 400px;
   background: var(--iucky-maskbgdeep);
   color: var(--iucky-fontcolor);
   padding: 8px 16px;
