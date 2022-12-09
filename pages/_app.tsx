@@ -1,46 +1,19 @@
 import '../styles/globals.css'
-import type { AppContext } from 'next/app'
-import { Router } from 'next/router'
-import { useCallback, useEffect } from 'react'
-import { message } from 'react-message-popup'
-import QP from 'qier-progress'
-import { apiClient } from '../utils/request.util'
 import NextApp from 'next/app'
+import type { AppContext } from 'next/app'
+import { getInitData } from '@utils/init.util'
+import { InitialDataType } from '@contexts/initial-data'
 
-function App({ initialData, Component, pageProps }) {
+interface DataModel {
+  initData: any
+}
 
-  const Progress = new QP({ colorful: false, color: '#27ae60' })
-  const registerRouterEvents = useCallback(() => {
-    Router.events.on('routeChangeStart', () => {
-      // animation('out')
+const App: React.FC<DataModel & { Component: any; pageProps: any; err: any }> = (
+  props,
+) => {
+  const { initData, Component, pageProps } = props
 
-      Progress.start()
-      // window.scrollTo({ top: 0, behavior: 'smooth' })
-      history.backPath = history.backPath
-        ? [...history.backPath, history.state.as]
-        : [history.state.as]
-    })
-
-    Router.events.on('routeChangeComplete', () => {
-      // animation('in')
-      Progress.finish()
-    })
-
-    Router.events.on('routeChangeError', () => {
-      // animation('in')
-      history.backPath?.pop()
-      Progress.finish()
-      message.error('出现了未知错误, 刷新试试?')
-    })
-  }, [])
-
-  useEffect(() => {
-    try {
-      registerRouterEvents()
-    } finally {
-      document.body.classList.remove('loading')
-    }
-  }, [])
+  console.log('initData', initData)
 
   return (
     <>
@@ -50,8 +23,35 @@ function App({ initialData, Component, pageProps }) {
 }
 
 // @ts-ignore
-// App.getInitialProps = async (props: AppContext) => {
+App.getInitialProps = async (appContext: AppContext) => {
+  const ctx = appContext.ctx
+  // const request = ctx.req
 
-// }
+
+  const data: InitialDataType & { reason?: any } = await getInitData();
+  const appProps = (async () => {
+    try {
+      // Next 会从小组件向上渲染整个页面，有可能在此报错。兜底
+      return await NextApp.getInitialProps(appContext)
+    } catch (e) {
+      // TODO next rfc Layout, 出了就重构这里
+      // 只有无数据 也就是 服务端不跑起来 或者接口不对的时候 捕获异常
+      // 这是为什么呢 说来说去还是 nextjs 太辣鸡了 只能各种 hack
+      // 只能这样了
+
+      if (!data.reason) {
+        // 这里抛出，和官网直接 await getProps 一样，异常走到 _error 处理
+        throw e
+      }
+      // 这里捕获， 为了走全局无数据页
+      if (ctx.res) {
+        ctx.res.statusCode = 466
+        ctx.res.statusMessage = 'No Data'
+      }
+      return null
+    }
+  })
+  return { ...appProps, initData: data }
+};
 
 export default App

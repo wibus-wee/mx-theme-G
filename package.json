@@ -44,7 +44,9 @@
   },
   "dependencies": {
     "@icon-park/react": "1.4.2",
+    "@mx-space/api-client": "1.0.0-beta.3",
     "@mx-space/kami-design": "^0.0.3",
+    "axios": "^1.2.1",
     "clsx": "1.2.1",
     "cross-env": "7.0.3",
     "framer-motion": "7.5.1",
@@ -54,7 +56,6 @@
     "mobx-react-lite": "3.4.0",
     "next": "12.2.6",
     "next-seo": "5.5.0",
-    "ohmyfetch": "0.4.20",
     "qier-progress": "1.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
