@@ -1,27 +1,20 @@
-import { $fetch } from "ohmyfetch";
 import { message } from "react-message-popup";
-import Package from '../package.json'
-import appState from "../states/appState";
+import { axiosAdaptor } from '@mx-space/api-client/dist/adaptors/axios'
+import { isDev } from "./env.util";
+import { createClient, allControllers } from "@mx-space/api-client";
 
-/**
- * @description 封装请求方法
- */
-export const apiClient = $fetch.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
-  retry: 3,
-  async onRequestError({ error }) {
-    console.log('[fetch request error]', error)
-    message.error(`[Fetch 请求错误] ${error}`)
+const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT || 'http://192.168.3.4:2333'
+const client = createClient(axiosAdaptor)(endpoint)
+
+const $axios = axiosAdaptor.default
+$axios.interceptors.request.use(
+  // (config) => {},
+  (error) => {
+    isDev() && message.error(error.data?.message);
+    return Promise.reject(error);
   },
-  async onResponseError({ error }) {
-    console.log('[fetch response error]', error)
-    message.error(`[Fetch 返回错误] ${error}`)
-  },
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
-    'x-forwarded-for': appState.request.ip,
-    "User-Agent": `${appState.request.userAgent} NextJS/v${Package.dependencies.next} NEXT-Theme-Tiny/${Package.version}` || '',
-  },
-})
+)
+
+client.injectControllers(allControllers)
+
+export const apiClient = client
