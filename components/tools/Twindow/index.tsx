@@ -3,7 +3,7 @@
  * @reference: [reactify-component/react-message](https://github.com/reactify-component/react-message/)
  */
 
-import { isServerSide } from "@utils/env"
+import { isServerSide } from "@utils/env.util"
 import ReactDOM from "react-dom"
 import { Root, createRoot } from 'react-dom/client'
 import Ttwindow, { ITwindow, TwindowContainer } from "./twindow"
@@ -70,12 +70,14 @@ const getContainerNode: () => Promise<[HTMLElement, Root | null]> = () => {
 }
 
 
+// eslint-disable-next-line import/no-mutable-exports
 let Twindow: (content: TwindowInstance['content'], duration?: TwindowInstance['duration']) => Promise<MessageReturnType>
 const is18 = version.startsWith('18')
 if (!is18) {
   throw new TypeError('react version low than 18 is not supported')
 }
 
+// eslint-disable-next-line prefer-const
 Twindow = (content: ITwindow, duration = 2500) => {
   return new Promise<MessageReturnType>((resolve) => {
     if (isServerSide()) {
@@ -172,5 +174,5 @@ Twindow = (content: ITwindow, duration = 2500) => {
 export { Twindow }
 if ('window' in globalThis) {
   // @ts-ignore
-  window.message = Twindow
+  window.Twindow = Twindow
 }

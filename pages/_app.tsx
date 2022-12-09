@@ -3,6 +3,7 @@ import NextApp from 'next/app'
 import type { AppContext } from 'next/app'
 import { getInitData } from '@utils/init.util'
 import { InitialDataType } from '@contexts/initial-data'
+import { attachRequestProxy } from '@utils/request.util'
 
 interface DataModel {
   initData: any
@@ -12,8 +13,6 @@ const App: React.FC<DataModel & { Component: any; pageProps: any; err: any }> = 
   props,
 ) => {
   const { initData, Component, pageProps } = props
-
-  console.log('initData', initData)
 
   return (
     <>
@@ -25,9 +24,10 @@ const App: React.FC<DataModel & { Component: any; pageProps: any; err: any }> = 
 // @ts-ignore
 App.getInitialProps = async (appContext: AppContext) => {
   const ctx = appContext.ctx
-  // const request = ctx.req
+  const request = ctx.req
 
-
+  attachRequestProxy(request)
+  
   const data: InitialDataType & { reason?: any } = await getInitData();
   const appProps = (async () => {
     try {
