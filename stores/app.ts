@@ -8,9 +8,10 @@
  */
 
 
+import { isClientSide } from "@utils/env.util";
 import { makeAutoObservable } from "mobx";
 import { ViewportRecord } from "../types/view";
-import { isClientSide } from "../utils/ssr.util";
+
 
 
 

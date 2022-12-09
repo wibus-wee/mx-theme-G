@@ -10,19 +10,14 @@
 import { isDev } from "@utils/env.util"
 import { useCallback } from "react"
 import { TrackerOptions } from "types/tracker"
-import { useRootStore } from "./useStore"
 
 export const useTrack = () => {
-  const { configStore } = useRootStore()
-  const umamiConfig = configStore.getThemeItem('umami-config')
-  const umamiId = umamiConfig?.id
 
   const pageView = useCallback(
     (path: string) => {
-      if (!umamiId) return
       window.umami && window.umami?.trackView(path)
     },
-    [umamiId]
+    []
   )
 
   const event = useCallback(
@@ -32,7 +27,6 @@ export const useTrack = () => {
         console.info('event', options)
         return
       }
-      if (!umamiId) return
       try {
         window.umami && window.umami?.trackEvent(label || value?.toString() || '', action)
       } catch (e) {
@@ -40,7 +34,7 @@ export const useTrack = () => {
       }
 
     },
-    [umamiId]
+    []
   )
 
   return {

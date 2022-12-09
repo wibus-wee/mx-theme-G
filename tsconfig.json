@@ -37,6 +37,7 @@
       "@contexts/*": ["contexts/*"],
       "@hooks/*": ["hooks/*"],
       "@stores/*": ["stores/*"],
+      "@layouts/*": ["layouts/*"],
     }
   },
   "exclude": [

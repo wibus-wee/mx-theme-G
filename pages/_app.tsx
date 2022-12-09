@@ -2,8 +2,11 @@ import '../styles/globals.css'
 import NextApp from 'next/app'
 import type { AppContext } from 'next/app'
 import { getInitData } from '@utils/init.util'
-import { InitialDataType } from '@contexts/initial-data'
+import { InitialDataType, InitialProvider } from '@contexts/initial-data'
 import { attachRequestProxy } from '@utils/request.util'
+import { RootStoreProvider } from '@contexts/root-store'
+import { FC, memo, PropsWithChildren, useMemo } from 'react'
+import { BaseLayout } from '@layouts/BaseLayout'
 
 interface DataModel {
   initData: any
@@ -14,12 +17,44 @@ const App: React.FC<DataModel & { Component: any; pageProps: any; err: any }> = 
 ) => {
   const { initData, Component, pageProps } = props
 
+  const innerComp = useMemo(() => {
+    return initData ? (
+      <Wrapper>
+        <Component {...pageProps} />
+      </Wrapper>
+    ) : (
+      <>
+        <h1>
+          Missing initial data.Make sure you have run `getInitialProps` before ?
+        </h1 >
+      </>
+    )
+  }, [initData, Component, pageProps])
+
   return (
-    <>
-      <Component {...pageProps} />
-    </>
+    <RootStoreProvider>
+      <InitialProvider
+        initialData={initData}
+      >
+        {innerComp}
+      </InitialProvider>
+    </RootStoreProvider>
   )
 }
+
+
+const Wrapper: FC<PropsWithChildren> = memo((props) => {
+
+  return (
+    <>
+      <BaseLayout>
+        {props.children}
+      </BaseLayout>
+    </>
+  )
+})
+Wrapper.displayName = 'Wrapper'
+
 
 // @ts-ignore
 App.getInitialProps = async (appContext: AppContext) => {
@@ -27,7 +62,7 @@ App.getInitialProps = async (appContext: AppContext) => {
   const request = ctx.req
 
   attachRequestProxy(request)
-  
+
   const data: InitialDataType & { reason?: any } = await getInitData();
   const appProps = (async () => {
     try {

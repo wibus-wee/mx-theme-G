@@ -11,3 +11,8 @@ export function useRootStore() {
 }
 
 export const useStore = useRootStore
+
+export function useThemeConfig() {
+  const { configStore } = useRootStore()
+  return configStore.getConfig("config")
+}

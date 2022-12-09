@@ -1,3 +1,4 @@
+import { InitialDataType } from "@contexts/initial-data";
 import { makeAutoObservable } from "mobx";
 
 export class ConfigStore {
@@ -17,7 +18,7 @@ export class ConfigStore {
   /**
    * @description: 获取 config
    */
-  getConfig = (key?: string) => {
+  getConfig = (key?: "aggregateData" | "config") => {
     return key ? this.config[key] : this.config
   }
 
