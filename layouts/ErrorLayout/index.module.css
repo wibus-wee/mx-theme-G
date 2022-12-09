@@ -1,0 +1,51 @@
+.next-error {
+  margin: 0;
+  color: #000;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-error-h1 {
+  border-right: 1px solid rgba(0, 0, 0, .3);
+  display: inline-block;
+  margin: 0;
+  margin-right: 20px;
+  padding: 0 23px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  vertical-align: top;
+  line-height: 49px
+}
+
+.next-error-inner {
+  display: inline-block;
+  text-align: left;
+  line-height: 49px;
+  height: 49px;
+  vertical-align: middle;
+}
+
+.next-error-h2 {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 49px;
+  margin: 0;
+  padding: 0
+}
+
+@media (prefers-color-scheme: dark) {
+  .next-error {
+    color: #fff;
+    background: #000;
+  }
+
+  .next-error-h1 {
+    border-right: 1px solid rgba(255, 255, 255, .3);
+  }
+}

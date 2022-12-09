@@ -1,4 +1,3 @@
-import { InitialDataType } from "@contexts/initial-data";
 import { makeAutoObservable } from "mobx";
 
 export class ConfigStore {

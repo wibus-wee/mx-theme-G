@@ -7,6 +7,7 @@ import { attachRequestProxy } from '@utils/request.util'
 import { RootStoreProvider } from '@contexts/root-store'
 import { FC, memo, PropsWithChildren, useMemo } from 'react'
 import { BaseLayout } from '@layouts/BaseLayout'
+import ErrorLayout from '@layouts/ErrorLayout'
 
 interface DataModel {
   initData: any
@@ -17,17 +18,25 @@ const App: React.FC<DataModel & { Component: any; pageProps: any; err: any }> = 
 ) => {
   const { initData, Component, pageProps } = props
 
+  initData.reason && console.error(initData.reason)
+
   const innerComp = useMemo(() => {
-    return initData ? (
+    return initData ? initData.reason ? (
+      <ErrorLayout
+        title={"请求错误"}
+      >
+        {initData.reason.raw.message}
+      </ErrorLayout>
+    ) : (
       <Wrapper>
         <Component {...pageProps} />
       </Wrapper>
     ) : (
-      <>
-        <h1>
-          Missing initial data.Make sure you have run `getInitialProps` before ?
-        </h1 >
-      </>
+      <ErrorLayout
+        title={"无数据"}
+      > 
+        G.Theme 无法获取 Mix Space Core 服务端数据，请检查控制台报错 & 检查服务端是否已启动。
+      </ErrorLayout>
     )
   }, [initData, Component, pageProps])
 
