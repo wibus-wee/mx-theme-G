@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": ".",
     "experimentalDecorators": true,
     "noEmit": true,
     "strict": true,
@@ -29,12 +30,13 @@
     "isolatedModules": true,
     "incremental": true,
     "paths": {
-      "~/*": [
-        "../*"
-      ],
-      "~": [
-        ".."
-      ]
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"],
+      "@contexts/*": ["contexts/*"],
+      "@hooks/*": ["hooks/*"],
+      "@stores/*": ["stores/*"],
     }
   },
   "exclude": [
