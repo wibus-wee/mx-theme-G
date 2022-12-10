@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.item a {
+  cursor: pointer;
+}
+
 .item h2 {
   position: relative;
   z-index: 2;
