@@ -48,26 +48,26 @@ interface Sidebar {
 
 
 interface Site {
-  favicon: string
-  logoSvg: string
-  subTitle: string
-  backgrounds: {
-    background: Background
-    header: Background
+  favicon?: string
+  logoSvg?: string
+  backgrounds?: {
+    background?: Background
+    header?: Background
   }
-  darkMask: boolean
-  header: Header
-  footer: Footer
-  motto: {
+  darkMask?: boolean
+  header?: Header
+  footer?: Footer
+  motto?: {
     content: string
     author: string
   }
-  sidebar: Sidebar
+  sidebar?: Sidebar
 }
-interface Function { }
+
+// interface Function { }
 
 export interface GConfig {
   name: string
   site: Site
-  function: Function
+  // function: Function
 }
