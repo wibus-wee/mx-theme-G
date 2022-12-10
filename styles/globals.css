@@ -39,6 +39,7 @@
 
 :root {
   --iucky-background: #fff;
+  --iucky-background-op: rgb(217, 217, 217);
   /* --iucky-theme: #425AEF; */
   --iucky-theme: var(--iucky-green);
   /* --iucky-theme-op: #4259ef23; */
@@ -57,7 +58,7 @@
   --iucky-orange: #e38100;
   --iucky-fontcolor: #363636;
   --iucky-fontcolor-reverse: #fff;
-  --iucky-background: #f7f9fe;
+  /* --iucky-background: #f7f9fe; */
   --iucky-reverse: #000;
   --iucky-maskbg: rgba(255, 255, 255, 0.6);
   --iucky-maskbgdeep: rgba(255, 255, 255, 0.8);
@@ -148,6 +149,7 @@ a {
     --iucky-fontcolor: #F7F7FA;
     --iucky-fontcolor-reverse: #000;
     --iucky-background: #18171d;
+    --iucky-background-op: #27262f;
     --iucky-reverse: #fff;
     --iucky-maskbg: rgba(0, 0, 0, 0.6);
     --iucky-maskbgdeep: rgba(0, 0, 0, 0.8);
@@ -170,4 +172,89 @@ a {
     --iucky-shadow-border: 0 8px 16px -4px #00000050;
     --style-border-forever: 2px solid var(--iucky-lighttext);
   }
+}
+
+/* --- content --- */
+
+.content> :first-child {
+  margin-top: 1.5rem;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-weight: 400;
+  margin: 2rem 1.5rem 1.25rem;
+  cursor: pointer;
+  position: relative;
+  color: var(--iucky-fontcolor);
+}
+
+.content h1 {
+  font-size: 1.5rem;
+}
+
+.content h2 {
+  font-size: 1.35rem;
+}
+
+.content h3 {
+  font-size: 1.15rem;
+}
+
+.content h4 {
+  font-size: 1.05rem;
+}
+
+.content h5 {
+  font-size: 1rem;
+}
+
+.content h6 {
+  font-size: 0.95rem;
+}
+
+.content h1::after,
+.content h2::after,
+.content h3::after {
+  content: ' ';
+  display: block;
+  height: 3px;
+  width: 3rem;
+  background-color: #EEE;
+  opacity: .6;
+  position: absolute;
+  bottom: -0.5rem;
+}
+
+.content p {
+  margin: 0 1.5rem 1.25rem;
+  position: relative;
+  font-weight: 400;
+  text-align: justify;
+  color: var(--iucky-fontcolor);
+  word-wrap: break-word;
+  line-height: 1.8;
+  letter-spacing: .03rem;
+}
+
+.content ol,
+.content ul {
+  margin: 1.5rem 1.5rem;
+}
+
+.content li {
+  word-wrap: break-word;
+  line-height: 1.8;
+  letter-spacing: .013rem;
+  color: var(--iucky-fontcolor);
+}
+
+.content strong,
+.content b {
+  font-weight: 600;
+  color: var(--iucky-red);
 }
