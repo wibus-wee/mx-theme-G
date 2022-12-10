@@ -1,3 +1,4 @@
+import { InitialContext } from "@contexts/initial-data"
 import { RootStoreContext } from "@contexts/root-store"
 import { useContext } from "react"
 
@@ -12,7 +13,14 @@ export function useRootStore() {
 
 export const useStore = useRootStore
 
-export function useThemeConfig() {
-  const { configStore } = useRootStore()
-  return configStore.getConfig("config")
+export const useInitialData = () => {
+  return useContext(InitialContext).aggregateData
 }
+
+export const useThemeConfig = () => {
+  const config = useContext(InitialContext).config
+
+  return config
+}
+
+export { useThemeConfig as useGConfig }

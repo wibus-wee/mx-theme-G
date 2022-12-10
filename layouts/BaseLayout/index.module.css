@@ -1,0 +1,7 @@
+.main {
+  width: 800px;
+  margin: 50px auto;
+  position: relative;
+  right: 0;
+  transition: right .3s;
+}
