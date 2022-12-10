@@ -1,3 +1,4 @@
+import { AggregateRoot, AggregateTop } from "@mx-space/api-client/.";
 import { makeAutoObservable } from "mobx";
 
 export class ConfigStore {

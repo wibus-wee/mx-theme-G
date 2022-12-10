@@ -55,6 +55,7 @@ interface Site {
     background: Background
     header: Background
   }
+  darkMask: boolean
   header: Header
   footer: Footer
   motto: {
