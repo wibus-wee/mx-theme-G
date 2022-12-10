@@ -1,19 +1,24 @@
-import { Twindow } from '@components/tools/Twindow'
-import { isClientSide } from '@utils/env.util'
+import { Card } from '@components/widgets/Card'
+import { AggregateTop } from '@mx-space/api-client/.'
+import { apiClient } from '@utils/request.util'
+import { omit } from 'lodash'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
+import styles from "@styles/Home.module.css"
 
-const Home: NextPage = () => {
-
-  if (isClientSide()) {
-    window.onerror = (message, source, lineno, colno, error) => {
-      console.log(111)
-      Twindow({
-        title: '遇到了一点问题捏 ~',
-        text: `${message}`,
-      })
-    }
+export const getServerSideProps = async () => {
+  const aggregateData = await apiClient.aggregate.getTop(8)
+  return {
+    props: omit(
+      aggregateData,
+      ['says']
+    )
   }
+}
+
+const Home: NextPage<AggregateTop> = (props) => {
+
+  console.log('props', props)
 
   return (
     <>
@@ -22,7 +27,21 @@ const Home: NextPage = () => {
         description={"Next.js + TypeScript + Valtio Starter"}
       />
 
-
+      <div className={styles.container}>
+        {
+          props.posts?.map((post, index) => {
+            return (
+              <Card 
+                key={index}
+                date={post.created}
+                category={post.category}
+                title={post.title}
+                slug={post.slug}
+              />
+            )
+          })
+        }
+      </div>
     </>
   )
 }

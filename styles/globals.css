@@ -38,6 +38,7 @@
 }
 
 :root {
+  --iucky-background: #fff;
   /* --iucky-theme: #425AEF; */
   --iucky-theme: var(--iucky-green);
   /* --iucky-theme-op: #4259ef23; */
