@@ -25,8 +25,8 @@ export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
       <style>
         {`
         :root {
-          --background-image-light: url(${config?.site.backgrounds.background.src.light});
-          --background-image-dark: url(${config?.site.backgrounds.background.src.dark});
+          --background-image-light: url(${config?.site.backgrounds?.background?.src.light});
+          --background-image-dark: url(${config?.site.backgrounds?.background?.src.dark});
         }
         `}
       </style>
