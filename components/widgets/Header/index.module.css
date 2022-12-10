@@ -73,3 +73,12 @@
   -webkit-user-select: none;
   user-select: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: var(--iucky-background);
+  }
+  .header_image {
+    display: none;
+  }
+}
