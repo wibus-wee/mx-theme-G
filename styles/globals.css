@@ -146,7 +146,7 @@ a {
     --iucky-yellow: #ffc93e;
     --iucky-yellow-op: #ffc93e30;
     --iucky-orange: #ff953e;
-    --iucky-fontcolor: #F7F7FA;
+    --iucky-fontcolor: #d5d5d6;
     --iucky-fontcolor-reverse: #000;
     --iucky-background: #18171d;
     --iucky-background-op: #27262f;
@@ -238,6 +238,13 @@ a {
   opacity: .6;
   position: absolute;
   bottom: -0.5rem;
+  transition: width .3s ease-in-out;
+}
+
+.content h1:hover::after,
+.content h2:hover::after,
+.content h3:hover::after {
+  width: 5rem;
 }
 
 .content p {
