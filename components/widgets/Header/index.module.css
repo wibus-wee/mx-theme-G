@@ -57,3 +57,17 @@
 .content_right a:hover {
   color: #fff;
 }
+
+.header_image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: .5;
+  z-index: 1;
+  max-height: 20rem;
+  bottom: -70%;
+  right: 0;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

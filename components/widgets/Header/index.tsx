@@ -37,6 +37,9 @@ export const Header = () => {
           </nav>
         </div>
       </div>
+      <img src="https://cdn.exia.xyz/img/blog/42.webp" alt="header-image"
+        className={styles.header_image}
+      />
     </header>
   )
 
