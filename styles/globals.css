@@ -254,8 +254,9 @@ a {
   text-align: justify;
   color: var(--iucky-fontcolor);
   word-wrap: break-word;
-  line-height: 1.8;
-  letter-spacing: .03rem;
+  line-height: 2.2;
+  letter-spacing: .09rem;
+  font-size: 1.1rem;
 }
 
 .content ol,

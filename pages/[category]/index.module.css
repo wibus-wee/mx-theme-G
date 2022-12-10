@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background: var(--iucky-background);
+  background: var(--iucky-background-op);
   flex-direction: column;
 }
 
@@ -54,7 +54,7 @@
   width: 100%;
   height: 15.5rem;
   zoom: 1;
-  background-color: var(--iucky-background);
+  background-color: var(--iucky-background-op);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

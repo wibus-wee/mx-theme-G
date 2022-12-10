@@ -41,8 +41,6 @@ export const Post: NextPage<PostModel> = (props) => {
     })
   }
 
-  console.log(props.images)
-
   return (
     <div className={styles['container']}>
       <article itemScope itemType="http://schema.org/BlogPosting">
@@ -50,20 +48,18 @@ export const Post: NextPage<PostModel> = (props) => {
           className={
             clsx(
               styles['header'],
-              // props.meta?.cover && styles['has-cover']
-              props.images?.length > 0 && styles['has-cover']
+              props.meta?.cover && styles['has-cover']
             )
           }
         >
           {
-            // props.meta?.cover 
-            props.images?.length > 0
+            props.meta?.cover
             && (
               <>
                 <div className={styles['cover']}
                   style={{
-                    // backgroundImage: `url(${props.meta.cover})`
-                    backgroundImage: `url(${props.images[0].src})`
+                    backgroundImage: `url(${props.meta.cover})`
+                    // backgroundImage: `url(${props.images[0].src})`
                   }}
                 />
               </>
