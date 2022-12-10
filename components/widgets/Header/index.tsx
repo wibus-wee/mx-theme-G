@@ -1,4 +1,5 @@
 import { useInitialData } from "@hooks/useStore"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import styles from "./index.module.css"
 
@@ -20,17 +21,17 @@ export const Header = () => {
         </div>
         <div className={styles.content_right}>
           <nav>
-            <a href="/" className={pathname === "/" ? styles.active : ''}>首页</a>
+            <Link href="/" className={pathname === "/" ? styles.active : ''}>首页</Link>
             {
               pageMeta?.map((item, index) => {
                 return (
-                  <a
+                  <Link
                     key={index}
                     href={`/${item.slug}`}
                     className={pathname === `/${item.slug}` ? styles.active : ''}
                   >
                     {item.title}
-                  </a>
+                  </Link>
                 )
               })
             }

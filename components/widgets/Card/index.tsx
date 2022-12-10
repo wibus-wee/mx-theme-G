@@ -1,4 +1,5 @@
 import { CategoryModel } from "@mx-space/api-client"
+import Link from "next/link"
 import styles from "./index.module.css"
 
 interface ICard {
@@ -13,20 +14,20 @@ export const Card = ({ date, category, title, slug, isNote }: ICard) => {
   return (
     <div className={styles.item}>
       <h2>
-        <a href={
-          !isNote ? `/posts/${slug}` : `/notes/${slug}`
-        }>{title}</a>
+        <Link href={
+          !isNote ? `/${category!.slug}/${slug}` : `/notes/${slug}`
+        }>{title}</Link>
       </h2>
       <div className={styles.meta}>
         <span>
           {
             !isNote && category && (
-              <a href={`/categories/${category.slug}`}>{category.name}</a>
+              <Link href={`/categories/${category.slug}`}>{category.name}</Link>
             )
           }
           {
             isNote && (
-              <a href={`/notes/${slug}`}>Note</a>
+              <Link href={`/notes/${slug}`}>Note</Link>
             )
           }
         </span>
