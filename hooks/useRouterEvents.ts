@@ -32,7 +32,7 @@ export const useRouterEvent = () => {
       })
 
       Progress.start()
-      // window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
       history.backPath = history.backPath
         ? [...history.backPath, history.state.as]
         : [history.state.as]
