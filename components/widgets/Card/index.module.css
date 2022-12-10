@@ -94,3 +94,9 @@
 .item:hover .image {
   opacity: .8;
 }
+
+@media (prefers-color-scheme: dark) {
+  .image {
+    display: none;
+  }
+}
