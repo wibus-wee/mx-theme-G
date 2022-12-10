@@ -49,7 +49,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@icon-park/react": "1.4.2",
     "@mx-space/api-client": "1.0.0-beta.3",
-    "@mx-space/kami-design": "^0.0.3",
+    "@mx-space/kami-design": "^0.1.0",
     "axios": "^1.2.1",
     "clsx": "1.2.1",
     "cross-env": "7.0.3",
