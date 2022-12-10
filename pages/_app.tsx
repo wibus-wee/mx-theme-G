@@ -8,6 +8,7 @@ import { RootStoreProvider } from '@contexts/root-store'
 import { FC, memo, PropsWithChildren, useMemo } from 'react'
 import { BaseLayout } from '@layouts/BaseLayout'
 import ErrorLayout from '@layouts/ErrorLayout'
+import { Header } from '@components/widgets/Header'
 
 interface DataModel {
   initData: any
@@ -57,6 +58,7 @@ const Wrapper: FC<PropsWithChildren> = memo((props) => {
   return (
     <>
       <BaseLayout>
+        <Header />
         {props.children}
       </BaseLayout>
     </>
