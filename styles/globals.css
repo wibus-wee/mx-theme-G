@@ -172,6 +172,16 @@ a {
     --iucky-shadow-border: 0 8px 16px -4px #00000050;
     --style-border-forever: 2px solid var(--iucky-lighttext);
   }
+
+  .dark-mask {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 }
 
 /* --- content --- */

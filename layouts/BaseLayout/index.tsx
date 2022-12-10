@@ -33,6 +33,7 @@ export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
       <main className={clsx(styles.main)}>
         {props.children}
       </main>
+      <div className="dark-mask" />
     </>
   );
 })
