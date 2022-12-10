@@ -2,8 +2,11 @@
 import { $RootStore } from "@contexts/root-store";
 import { useResetDirection } from "@hooks/useResetDirection";
 import { useRouterEvent } from "@hooks/useRouterEvents";
+import { useGConfig } from "@hooks/useStore";
+import clsx from "clsx";
 import { observer } from "mobx-react-lite";
 import { PropsWithChildren, useEffect } from "react";
+import styles from "./index.module.css"
 
 export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
   useResetDirection()
@@ -14,9 +17,22 @@ export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
     window.onresize = () => { $RootStore.appUIStore.updateViewport() }
   }, [])
 
+  const config = useGConfig()
+
+
   return (
-    <main>
-      {props.children}
-    </main>
+    <>
+      <style>
+        {`
+        :root {
+          --background-image-light: url(${config?.site.backgrounds.background.src.light});
+          --background-image-dark: url(${config?.site.backgrounds.background.src.dark});
+        }
+        `}
+      </style>
+      <main className={clsx(styles.main)}>
+        {props.children}
+      </main>
+    </>
   );
 })
