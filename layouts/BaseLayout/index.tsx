@@ -1,4 +1,5 @@
 
+import { Twindow } from "@components/tools/Twindow";
 import { $RootStore } from "@contexts/root-store";
 import { useResetDirection } from "@hooks/useResetDirection";
 import { useRouterEvent } from "@hooks/useRouterEvents";
@@ -18,7 +19,10 @@ export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
   }, [])
 
   const config = useGConfig()
-
+  if (!config) Twindow({
+    title: "好像少了点什么 ~_^",
+    text: "似乎没有获取到主题配置文件？"
+  })
 
   return (
     <>

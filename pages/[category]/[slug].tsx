@@ -7,6 +7,7 @@ import styles from "./index.module.css"
 import { Markdown } from '@mx-space/kami-design'
 import { useState } from "react"
 import { Twindow } from "@components/tools/Twindow"
+import clsx from "clsx"
 export const getServerSideProps = async (context) => {
   const { category, slug } = context.query
   const post = await apiClient.post.getPost(category, slug)
@@ -40,10 +41,34 @@ export const Post: NextPage<PostModel> = (props) => {
     })
   }
 
+  console.log(props.images)
+
   return (
     <div className={styles['container']}>
       <article itemScope itemType="http://schema.org/BlogPosting">
-        <div className={styles['header']}>
+        <div
+          className={
+            clsx(
+              styles['header'],
+              // props.meta?.cover && styles['has-cover']
+              props.images?.length > 0 && styles['has-cover']
+            )
+          }
+        >
+          {
+            // props.meta?.cover 
+            props.images?.length > 0
+            && (
+              <>
+                <div className={styles['cover']}
+                  style={{
+                    // backgroundImage: `url(${props.meta.cover})`
+                    backgroundImage: `url(${props.images[0].src})`
+                  }}
+                />
+              </>
+            )
+          }
           <h1 itemProp="name headline">{props.title}</h1>
           <p>
             <time itemProp="datePublished" dateTime={props.created}>{transformDateFromCreatedAt(props.created)}</time>
@@ -54,7 +79,7 @@ export const Post: NextPage<PostModel> = (props) => {
           </p>
         </div>
         <div className={"content"} itemProp="articleBody">
-          {/* <Markdown codeBlockFully toc value={props.text} /> */}
+          <Markdown codeBlockFully toc value={props.text} />
         </div>
         <div className={styles['actions']}>
           <a
