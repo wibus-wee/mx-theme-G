@@ -4,7 +4,7 @@ import { apiClient } from "@utils/request.util"
 import { NextPage } from "next"
 import Link from "next/link"
 import styles from "./index.module.css"
-import { Markdown } from '@mx-space/kami-design'
+import { Markdown } from '@mx-space/kami-design/dist/index.windi'
 import { useState } from "react"
 import { Twindow } from "@components/tools/Twindow"
 import clsx from "clsx"
