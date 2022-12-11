@@ -437,3 +437,19 @@ screen and (min--moz-device-pixel-ratio: 1.5) {
 .line-numbers .line-numbers-rows>:last-child {
   padding-bottom: 15px !important;
 }
+
+@media (prefers-color-scheme: dark) {
+
+  .post-content pre,
+  .post-content code {
+    background-color: #2d2d2d !important;
+  }
+
+  .post-content .line-numbers-rows {
+    background-color: #403E3E;
+  }
+
+  .line-numbers-rows>span::before {
+    color: #888 !important;
+  }
+}
