@@ -74,7 +74,7 @@ export const Post: NextPage<PostModel> = (props) => {
             <span itemProp="interactionCount">{props.count.read} 次阅读</span>
           </p>
         </div>
-        <div className={"content"} itemProp="articleBody">
+        <div className={"post-content"} itemProp="articleBody">
           <Markdown codeBlockFully toc value={props.text} />
         </div>
         <div className={styles['actions']}>

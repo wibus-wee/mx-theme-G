@@ -33,8 +33,7 @@
 }
 
 ::selection {
-  background: var(--iucky-fontcolor);
-  color: var(--iucky-background);
+  background: var(--iucky-background-op);
 }
 
 :root {
@@ -56,7 +55,7 @@
   --iucky-yellow: #c28b00;
   --iucky-yellow-op: #d99c001a;
   --iucky-orange: #e38100;
-  --iucky-fontcolor: #363636;
+  --iucky-fontcolor: #202020;
   --iucky-fontcolor-reverse: #fff;
   /* --iucky-background: #f7f9fe; */
   --iucky-reverse: #000;
@@ -86,8 +85,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Merriweather', 'Open Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'Segoe UI Emoji', 'Segoe UI Symbol', Helvetica, Arial, sans-serif;
 }
 
 html::before {
@@ -147,7 +145,7 @@ a {
     --iucky-yellow-op: #ffc93e30;
     --iucky-orange: #ff953e;
     --iucky-fontcolor: #d5d5d6;
-    --iucky-fontcolor-reverse: #000;
+    --iucky-fontcolor-reverse: #202020;
     --iucky-background: #18171d;
     --iucky-background-op: #27262f;
     --iucky-reverse: #fff;
@@ -172,15 +170,30 @@ a {
     --iucky-shadow-border: 0 8px 16px -4px #00000050;
     --style-border-forever: 2px solid var(--iucky-lighttext);
   }
+}
 
+.dark-mask,
+.read-mask {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media (prefers-color-scheme: light) {
+  .read-mask {
+    display: block;
+    background: var(--iucky-background);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
   .dark-mask {
-    position: fixed;
+    display: block;
     background: rgba(0, 0, 0, 0.8);
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: -1;
   }
 }
 
@@ -275,4 +288,140 @@ a {
 .content b {
   font-weight: 600;
   color: var(--iucky-red);
+}
+
+.post-content {
+  padding: 50px;
+  word-wrap: break-word;
+  line-height: 2.5;
+  letter-spacing: 0.013rem;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-weight: 300;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  position: relative;
+  margin-top: 1.5em;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.post-content p,
+.post-content blockquote,
+.post-content ul,
+.post-content ol,
+.post-content dl,
+.post-content table,
+.post-content pre {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+.post-content>*:first-child {
+  margin-top: 0 !important;
+}
+
+.post-content blockquote {
+  margin: 0;
+  padding: 0.8rem 0.9375rem;
+  border-left: 0.25rem solid #ddd;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.post-content blockquote>:last-child,
+.comment-content blockquote>:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+.post-content h1 {
+  margin: 0.67em 0;
+  padding-bottom: 0.3rem;
+  font-size: 1.8em;
+  line-height: 1.2;
+}
+
+.post-content h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.55em;
+  line-height: 1.225;
+}
+
+
+.post-content h3 {
+  font-size: 1.4em;
+  line-height: 1.43;
+}
+
+.post-content h4 {
+  font-size: 1.2em;
+}
+
+.post-content h5 {
+  font-size: 1em;
+}
+
+.post-content h6 {
+  font-size: .875em;
+}
+
+.post-content strong {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.post-content hr,
+.comment-content hr {
+  overflow: hidden;
+  margin: 1rem 0;
+  padding: 0;
+  height: 0.125rem;
+  border: none;
+  background: #e7e7e7 repeating-linear-gradient(-45deg, #fff, #fff 0.25rem, transparent 0.25rem, transparent 0.5rem);
+}
+
+.post-content hr:before,
+.post-content hr:after,
+{
+display: table;
+content: "";
+}
+
+.post-content a {
+  color: #F55852;
+  position: relative;
+  white-space: normal;
+  font-weight: 500;
+  word-break: break-all;
+  border-bottom: 0.0625rem dashed #EEE;
+}
+
+.post-content a::after {
+  border-color: #F55852;
+  position: absolute;
+  bottom: -0.0625rem;
+  left: 100%;
+  width: 0;
+  border-bottom: 0.0625rem solid #1abc9c;
+  content: "";
+  transition: width 350ms, left 350ms;
+}
+
+.post-content a:hover {
+  border-bottom-color: transparent;
+}
+
+.post-content a:hover::after {
+  left: 0;
+  width: 100%;
+  transition: width 350ms;
 }
