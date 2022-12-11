@@ -12,7 +12,7 @@ export const useReadMask = () => {
       // 获取文章内容距离下一个元素的高度
       const postContentBottom = postContent.getBoundingClientRect().bottom;
       // 如果进入了文章内容区域
-      if (postContentTop < 0 && postContentBottom - 1000 > 0) {
+      if (postContentTop < 0 && postContentBottom - 500 > 0) {
         setShowMask(true);
         $RootStore.appUIStore.setReadMask(true);
       } else {
