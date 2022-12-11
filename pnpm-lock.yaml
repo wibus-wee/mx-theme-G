@@ -10,7 +10,7 @@ specifiers:
   '@innei/markdown-to-jsx': 7.1.3-15
   '@innei/prettier': 0.9.6
   '@mx-space/api-client': 1.0.0-beta.3
-  '@mx-space/kami-design': 0.1.1
+  '@mx-space/kami-design': 0.1.2
   '@types/lodash': 4.14.191
   '@types/lodash-es': ^4.17.6
   '@types/node': 18.6.5
@@ -56,7 +56,7 @@ dependencies:
   '@icon-park/react': 1.4.2_biqbaboplfbrettd7655fr4n2y
   '@innei/markdown-to-jsx': 7.1.3-15_react@18.2.0
   '@mx-space/api-client': 1.0.0-beta.3
-  '@mx-space/kami-design': 0.1.1_biqbaboplfbrettd7655fr4n2y
+  '@mx-space/kami-design': 0.1.2_biqbaboplfbrettd7655fr4n2y
   axios: 1.2.1
   clsx: 1.2.1
   cross-env: 7.0.3
@@ -1589,8 +1589,8 @@ packages:
     engines: {pnpm: '>=6'}
     dev: false
 
-  /@mx-space/kami-design/0.1.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-0GDIn+3ozu3j90Z0EB/nvPi0euDHoa0jDpvtDdqWqNAj07n2G1MHKh7fRZQS/pteh3lsyrcDeuTjYBJUWg3S2w==}
+  /@mx-space/kami-design/0.1.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-hXMPXdcrBaGQe8B5fwmyCroz9Y1I/GbhOOVGV/L0gu4Sj0FL0Ue/monYGFdk/H0NhHBRfPXwoHYI/peygWY2Wg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
