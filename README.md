@@ -15,6 +15,10 @@ I am developing in public. But this theme is not ready for use.
 
 > Original author: [youranreus](https://github.com/youranreus) / [G](https://github.com/youranreus/G)
 
+## Custom Metas
+
+- cover: The cover image of the post / page
+
 ## Author
 
 G. © Wibus, Released under AGPLv3. Created on Dec 8, 2022

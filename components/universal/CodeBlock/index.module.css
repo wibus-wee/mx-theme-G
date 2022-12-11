@@ -1,0 +1,51 @@
+.code-wrap {
+  position: relative;
+}
+
+.copy-tip {
+  color: var(--iucky-fontcolor-reverse);
+  position: absolute;
+  right: 2em;
+  top: 1em;
+  opacity: 0;
+  font-size: 0.6em;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  will-change: opacity;
+  user-select: none;
+  background-color: rgba(98, 98, 98, 0.8);
+  padding: 4px;
+  border-radius: 0.4rem;
+}
+
+.code-wrap:hover .copy-tip {
+  opacity: 0.4;
+}
+
+.code-wrap:hover .copy-tip:hover {
+  opacity: 1;
+}
+
+.copy-tip::after {
+  content: '';
+  bottom: -3px;
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.language-tip {
+  display: none;
+  position: absolute;
+  right: 1em;
+  transform: translate(-0.5em, 1.2em);
+  font-size: 0.8em;
+  opacity: 0.7;
+  z-index: 1;
+  color: var(--iucky-theme);
+  font-style: italic;
+}

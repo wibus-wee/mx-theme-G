@@ -24,6 +24,12 @@ export class AppStore {
   headerSubTitle = null as string | null
   private position = 0
   scrollDirection: 'up' | 'down' | null = null
+  colorMode = 'light' as 'light' | 'dark'
+  readMask = false
+
+  setReadMask = (value: boolean) => {
+    this.readMask = value
+  }
 
   setHeaderSubTitle(title: string) {
     this.headerSubTitle = title

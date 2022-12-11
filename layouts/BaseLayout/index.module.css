@@ -5,3 +5,7 @@
   right: 0;
   transition: right .3s;
 }
+
+.main-tocs {
+  right: 5rem;
+}

@@ -18,8 +18,6 @@ export const getServerSideProps = async () => {
 
 const Home: NextPage<AggregateTop> = (props) => {
 
-  console.log('props', props)
-
   return (
     <>
       <NextSeo
