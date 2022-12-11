@@ -1,18 +1,16 @@
-import { sanitizeUrl } from '@innei/markdown-to-jsx'
 import { PostModel } from "@mx-space/api-client"
 import { transformDateFromCreatedAt } from "@utils/date.util"
 import { apiClient } from "@utils/request.util"
 import { NextPage } from "next"
 import Link from "next/link"
 import styles from "./index.module.css"
-import { Markdown } from '@mx-space/kami-design/dist/index.windi'
-import { createElement, Fragment, useState } from "react"
+import { useState } from "react"
 import { Twindow } from "@components/tools/Twindow"
 import clsx from "clsx"
-import { CodeBlock } from "@components/universal/CodeBlock"
 import { useReadMask } from "@hooks/useReadMask"
 import { useActionsStore } from '@hooks/useStore'
-import { MarkdownToc, Tocs } from '@components/universal/Tocs'
+import { Tocs } from '@components/universal/Tocs'
+import { Markdown } from "@components/universal/Markdown"
 export const getServerSideProps = async (context) => {
   const { category, slug } = context.query
   const post = await apiClient.post.getPost(category, slug)
@@ -83,89 +81,7 @@ export const Post: NextPage<PostModel> = (props) => {
             </p>
           </div>
           <div className={"post-content"} itemProp="articleBody">
-            <Markdown
-              toc
-              tocSlot={MarkdownToc}
-              value={props.text}
-              extendsRules={{
-                heading: {
-                  react(node, output, state) {
-                    const { level, content } = node
-                    const id = content[0].content.replace(/\s/g, '-').toLowerCase()
-                    return (
-                      <Fragment key={state?.key}>
-                        {
-                          createElement(
-                            `h${level}`,
-                            {
-                              id,
-                              key: state?.key,
-                              className: `heading-${level}`,
-                            },
-                            output(content, state!),
-                          )
-                        }
-                      </Fragment>
-                    )
-                  }
-                },
-
-                codeBlock: {
-                  react(node, output, state) {
-                    return (
-                      <CodeBlock
-                        key={state?.key}
-                        content={node.content}
-                        lang={node.lang}
-                      />
-                    )
-                  },
-                },
-                footnoteReference: {
-                  react(node, output, state) {
-                    const { footnoteMap, target, content } = node
-                    const footnote = footnoteMap.get(content)
-                    // const linkCardId = (() => {
-                    //   try {
-                    //     const thisUrl = new URL(
-                    //       footnote?.footnote?.replace(': ', ''),
-                    //     )
-                    //     const isCurrentHost =
-                    //       thisUrl.hostname === window.location.hostname
-
-                    //     if (!isCurrentHost && !isDev) {
-                    //       return undefined
-                    //     }
-                    //     const pathname = thisUrl.pathname
-                    //     return pathname.slice(1)
-                    //   } catch {
-                    //     return undefined
-                    //   }
-                    // })()
-
-                    return (
-                      <Fragment key={state?.key}>
-                        <a
-                          href={sanitizeUrl(target)!}
-                          onClick={(e) => {
-                            e.preventDefault()
-                            window.scrollTo({
-                              top: document.getElementById(target)?.offsetTop,
-                              behavior: 'smooth',
-                            })
-                          }}
-                        >
-                          <sup key={state?.key}>^{content}</sup>
-                        </a>
-                        {/* {linkCardId && (
-                        <LinkCard id={linkCardId} key={state?.key} />
-                      )} */}
-                      </Fragment>
-                    )
-                  },
-                },
-              }}
-            />
+            <Markdown text={props.text} />
           </div>
           <div className={clsx(styles['actions'], "post-actions")}>
             <a
