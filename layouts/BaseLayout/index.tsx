@@ -3,7 +3,7 @@ import { Twindow } from "@components/tools/Twindow";
 import { $RootStore } from "@contexts/root-store";
 import { useResetDirection } from "@hooks/useResetDirection";
 import { useRouterEvent } from "@hooks/useRouterEvents";
-import { useGConfig, useRootStore } from "@hooks/useStore";
+import { useActionsStore, useGConfig, useRootStore } from "@hooks/useStore";
 import clsx from "clsx";
 import { observer } from "mobx-react-lite";
 import { PropsWithChildren, useEffect } from "react";
@@ -31,6 +31,8 @@ export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
     text: "似乎没有获取到主题配置文件？"
   })
 
+  const { isShowTocs } = useActionsStore()
+
   return (
     <>
       <style>
@@ -41,7 +43,9 @@ export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
         }
         `}
       </style>
-      <main className={clsx(styles.main)}>
+      <main className={clsx(styles.main,
+          isShowTocs && styles['main-tocs'],
+        )}>
         {props.children}
       </main>
       <div

@@ -23,4 +23,8 @@ export const useThemeConfig = () => {
   return config
 }
 
+export const useActionsStore = () => {
+  return useRootStore().actionsStore
+}
+
 export { useThemeConfig as useGConfig }
