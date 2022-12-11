@@ -26,7 +26,7 @@ export const HighLighter: FC<Props> = observer((props) => {
   const { colorMode } = appUIStore
   const handleCopy = useCallback(() => {
     navigator.clipboard.writeText(value)
-    message.success('COPIED!')
+    message.success('复制成功')
   }, [value])
   //  const isPrintMode = appUIStore.mediaType === 'print'
 
