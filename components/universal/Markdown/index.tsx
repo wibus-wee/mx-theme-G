@@ -13,7 +13,12 @@ export const Markdown = (props: { text: string }) => {
         heading: {
           react(node, output, state) {
             const { level, content } = node
-            const id = content[0].content.replace(/\s/g, '-').toLowerCase()
+            const id =
+              typeof content[0].content == 'object'
+                ?
+                content[0].content.map((item: any) => item.content).join('').replace(/\s/g, '-').toLowerCase()
+                :
+                content[0].content.replace(/\s/g, '-').toLowerCase()
             return (
               <Fragment key={state?.key}>
                 {
