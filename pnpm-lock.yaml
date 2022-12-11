@@ -45,7 +45,7 @@ specifiers:
   react-message-popup: 1.0.0
   react-use: 17.4.0
   rimraf: 3.0.2
-  tailwindcss: 3.1.8
+  tailwindcss: 3.2.4
   typescript: 4.8.4
 
 dependencies:
@@ -95,7 +95,7 @@ devDependencies:
   postcss-nesting: 10.2.0_postcss@8.4.19
   prettier: 2.8.1
   rimraf: 3.0.2
-  tailwindcss: 3.1.8_postcss@8.4.19
+  tailwindcss: 3.2.4_postcss@8.4.19
   typescript: 4.8.4
 
 packages:
@@ -4764,8 +4764,8 @@ packages:
       yaml: 1.10.2
     dev: true
 
-  /postcss-nested/5.0.6_postcss@8.4.19:
-    resolution: {integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==}
+  /postcss-nested/6.0.0_postcss@8.4.19:
+    resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
@@ -5536,8 +5536,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.1.8_postcss@8.4.19:
-    resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
+  /tailwindcss/3.2.4_postcss@8.4.19:
+    resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
@@ -5553,6 +5553,7 @@ packages:
       glob-parent: 6.0.2
       is-glob: 4.0.3
       lilconfig: 2.0.6
+      micromatch: 4.0.5
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
@@ -5560,7 +5561,7 @@ packages:
       postcss-import: 14.1.0_postcss@8.4.19
       postcss-js: 4.0.0_postcss@8.4.19
       postcss-load-config: 3.1.4_postcss@8.4.19
-      postcss-nested: 5.0.6_postcss@8.4.19
+      postcss-nested: 6.0.0_postcss@8.4.19
       postcss-selector-parser: 6.0.11
       postcss-value-parser: 4.2.0
       quick-lru: 5.1.1
