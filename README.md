@@ -1,4 +1,4 @@
-# G.
+# <img src="https://user-images.githubusercontent.com/62133302/206900264-d7a4154f-9dc3-43d3-9697-f0989402e83b.png" height="50" />
 A Graceful Mix Space Theme
 
 <pre align="center">
