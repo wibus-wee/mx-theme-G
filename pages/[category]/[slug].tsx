@@ -1,3 +1,4 @@
+import { sanitizeUrl } from '@innei/markdown-to-jsx'
 import { PostModel } from "@mx-space/api-client"
 import { transformDateFromCreatedAt } from "@utils/date.util"
 import { apiClient } from "@utils/request.util"
@@ -5,10 +6,11 @@ import { NextPage } from "next"
 import Link from "next/link"
 import styles from "./index.module.css"
 import { Markdown } from '@mx-space/kami-design/dist/index.windi'
-import react, { useState } from "react"
+import { Fragment, useState } from "react"
 import { Twindow } from "@components/tools/Twindow"
 import clsx from "clsx"
 import { CodeBlock } from "@components/universal/CodeBlock"
+import { useReadMask } from "@hooks/useReadMask"
 export const getServerSideProps = async (context) => {
   const { category, slug } = context.query
   const post = await apiClient.post.getPost(category, slug)
@@ -18,6 +20,7 @@ export const getServerSideProps = async (context) => {
 }
 
 export const Post: NextPage<PostModel> = (props) => {
+  useReadMask()
 
   const [like, setLike] = useState({
     count: props.count.like,
@@ -41,7 +44,6 @@ export const Post: NextPage<PostModel> = (props) => {
       })
     })
   }
-
   return (
     <div className={styles['container']}>
       <article itemScope itemType="http://schema.org/BlogPosting">
@@ -138,7 +140,7 @@ export const Post: NextPage<PostModel> = (props) => {
             }}
           />
         </div>
-        <div className={styles['actions']}>
+        <div className={clsx(styles['actions'], "post-actions")}>
           <a
             className={styles['action']}
             onClick={handleLike}
