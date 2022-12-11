@@ -16,6 +16,9 @@ export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
   useEffect(() => {
     $RootStore.appUIStore.updateViewport()
     window.onresize = () => { $RootStore.appUIStore.updateViewport() }
+    // 获取当前 mediaType
+    const mediaType = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    $RootStore.appUIStore.colorMode = mediaType
   }, [])
 
   const config = useGConfig()

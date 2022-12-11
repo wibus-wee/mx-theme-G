@@ -5,9 +5,10 @@ import { NextPage } from "next"
 import Link from "next/link"
 import styles from "./index.module.css"
 import { Markdown } from '@mx-space/kami-design/dist/index.windi'
-import { useState } from "react"
+import react, { useState } from "react"
 import { Twindow } from "@components/tools/Twindow"
 import clsx from "clsx"
+import { CodeBlock } from "@components/universal/CodeBlock"
 export const getServerSideProps = async (context) => {
   const { category, slug } = context.query
   const post = await apiClient.post.getPost(category, slug)
@@ -75,7 +76,24 @@ export const Post: NextPage<PostModel> = (props) => {
           </p>
         </div>
         <div className={"post-content"} itemProp="articleBody">
-          <Markdown codeBlockFully toc value={props.text} />
+          <Markdown
+            codeBlockFully
+            toc
+            value={props.text}
+            extendsRules={{
+              codeBlock: {
+                react(node, output, state) {
+                  return (
+                    <CodeBlock
+                      key={state?.key}
+                      content={node.content}
+                      lang={node.lang}
+                    />
+                  )
+                },
+              }
+            }}
+          />
         </div>
         <div className={styles['actions']}>
           <a

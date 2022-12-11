@@ -24,6 +24,7 @@ export class AppStore {
   headerSubTitle = null as string | null
   private position = 0
   scrollDirection: 'up' | 'down' | null = null
+  colorMode = 'light' as 'light' | 'dark'
 
   setHeaderSubTitle(title: string) {
     this.headerSubTitle = title
