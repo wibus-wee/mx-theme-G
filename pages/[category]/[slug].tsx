@@ -91,7 +91,50 @@ export const Post: NextPage<PostModel> = (props) => {
                     />
                   )
                 },
-              }
+              },
+              footnoteReference: {
+                react(node, output, state) {
+                  const { footnoteMap, target, content } = node
+                  const footnote = footnoteMap.get(content)
+                  // const linkCardId = (() => {
+                  //   try {
+                  //     const thisUrl = new URL(
+                  //       footnote?.footnote?.replace(': ', ''),
+                  //     )
+                  //     const isCurrentHost =
+                  //       thisUrl.hostname === window.location.hostname
+
+                  //     if (!isCurrentHost && !isDev) {
+                  //       return undefined
+                  //     }
+                  //     const pathname = thisUrl.pathname
+                  //     return pathname.slice(1)
+                  //   } catch {
+                  //     return undefined
+                  //   }
+                  // })()
+
+                  return (
+                    <Fragment key={state?.key}>
+                      <a
+                        href={sanitizeUrl(target)!}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          window.scrollTo({
+                            top: document.getElementById(target)?.offsetTop,
+                            behavior: 'smooth',
+                          })
+                        }}
+                      >
+                        <sup key={state?.key}>^{content}</sup>
+                      </a>
+                      {/* {linkCardId && (
+                        <LinkCard id={linkCardId} key={state?.key} />
+                      )} */}
+                    </Fragment>
+                  )
+                },
+              },
             }}
           />
         </div>
