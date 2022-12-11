@@ -360,6 +360,31 @@ content: "";
   border: 0.0625rem solid #ddd;
 }
 
+.post-content table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+@media (prefers-color-scheme: dark) {
+
+
+  .post-content table thead tr {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .post-content table tr {
+    background-color: #2c2a2a;
+  }
+
+  .post-content table th,
+  .post-content table td {
+    border-color: #5e5c5c;
+  }
+
+  .post-content table tr:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
 @media screen and (min-device-pixel-ratio: 1.5),
 screen and (-webkit-min-device-pixel-ratio: 1.5),
 screen and (-o-min-device-pixel-ratio: 1.5 / 1.5),
