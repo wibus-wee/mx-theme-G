@@ -10,7 +10,7 @@ specifiers:
   '@innei/markdown-to-jsx': 7.1.3-15
   '@innei/prettier': 0.9.6
   '@mx-space/api-client': 1.0.0-beta.3
-  '@mx-space/kami-design': 0.1.2
+  '@mx-space/kami-design': 0.1.3
   '@types/lodash': 4.14.191
   '@types/lodash-es': ^4.17.6
   '@types/node': 18.11.13
@@ -56,7 +56,7 @@ dependencies:
   '@icon-park/react': 1.4.2_biqbaboplfbrettd7655fr4n2y
   '@innei/markdown-to-jsx': 7.1.3-15_react@18.2.0
   '@mx-space/api-client': 1.0.0-beta.3
-  '@mx-space/kami-design': 0.1.2_biqbaboplfbrettd7655fr4n2y
+  '@mx-space/kami-design': 0.1.3_biqbaboplfbrettd7655fr4n2y
   axios: 1.2.1
   clsx: 1.2.1
   cross-env: 7.0.3
@@ -1477,6 +1477,18 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@innei/markdown-to-jsx/7.1.3-beta.2_react@18.2.0:
+    resolution: {integrity: sha512-4bukfESz2O4vtiaVf62m8a5Ez6Ut21fbSn1sTvwkzdF+cwU1vT2xjXKWHprcd136nVGzIkHaVWM13fIXdXC/iQ==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      react: '>= 0.14.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /@innei/prettier/0.9.6:
     resolution: {integrity: sha512-hI6/2Gnk5OUkCXWRQLN5RMO9sg2EcfqI6eJ4OIfV2E1iJJ60AO2yjaH0NSJGLakct48c0qXJ7b8gW+vkP7H8hA==}
     dependencies:
@@ -1585,8 +1597,8 @@ packages:
     engines: {pnpm: '>=6'}
     dev: false
 
-  /@mx-space/kami-design/0.1.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-hXMPXdcrBaGQe8B5fwmyCroz9Y1I/GbhOOVGV/L0gu4Sj0FL0Ue/monYGFdk/H0NhHBRfPXwoHYI/peygWY2Wg==}
+  /@mx-space/kami-design/0.1.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-bMhBQ/ESSma+CvOfem0c+3TPASCVMaBjl+Op+nTOX2uZ/7P+928URtvpQyOMNIOO2/FxQnIgqguzcxOWNSeF5A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -1601,7 +1613,7 @@ packages:
       css-spring: 4.1.0
       lodash-es: 4.17.21
       markdown-escape: 2.0.0
-      markdown-to-jsx: /@innei/markdown-to-jsx/7.1.3-15_react@18.2.0
+      markdown-to-jsx: /@innei/markdown-to-jsx/7.1.3-beta.2_react@18.2.0
       medium-zoom: 1.0.8
       randomcolor: 0.6.2
       react: 18.2.0
