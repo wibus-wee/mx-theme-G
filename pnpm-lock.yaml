@@ -23,7 +23,7 @@ specifiers:
   dayjs: ^1.11.7
   eslint: 8.29.0
   eslint-config-next: 13.0.6
-  framer-motion: 7.7.2
+  framer-motion: 7.7.3
   husky: 8.0.2
   js-cookie: ^3.0.1
   less: 4.1.3
@@ -61,7 +61,7 @@ dependencies:
   clsx: 1.2.1
   cross-env: 7.0.3
   dayjs: 1.11.7
-  framer-motion: 7.7.2_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.7.3_biqbaboplfbrettd7655fr4n2y
   js-cookie: 3.0.1
   lodash: 4.17.21
   lodash-es: 4.17.21
@@ -1464,18 +1464,6 @@ packages:
       - eslint-import-resolver-webpack
       - supports-color
     dev: true
-
-  /@innei/markdown-to-jsx/7.1.3-15_react@18.2.0:
-    resolution: {integrity: sha512-EByBARxKwLiWjVkAcwxjFzhoqza0tqO+ZRbEcwA3fBes6aWvVPqB0XM4KAY7DonDfoX4wnPOHYIAgOwfUoILJA==}
-    engines: {node: '>= 10'}
-    peerDependencies:
-      react: '>= 0.14.0'
-    peerDependenciesMeta:
-      react:
-        optional: true
-    dependencies:
-      react: 18.2.0
-    dev: false
 
   /@innei/markdown-to-jsx/7.1.3-beta.2_react@18.2.0:
     resolution: {integrity: sha512-4bukfESz2O4vtiaVf62m8a5Ez6Ut21fbSn1sTvwkzdF+cwU1vT2xjXKWHprcd136nVGzIkHaVWM13fIXdXC/iQ==}
@@ -3440,8 +3428,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion/7.7.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-SDq4pansh+UxMtHuApQmyXbbb/oQu3LwhPByiGKXLrKRHxmHiq7VML0/mnFQQRIpWiYR/+wM4q8foFzeoaz8eg==}
+  /framer-motion/7.7.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-O08sQUOnlvnUrsq/NU9zMB92oYkTXu8lodyTLBXggDvE5HwHs1ZVvcYKuCfvVAqfTmJXiHgYiANrqXfzpU4Plg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
