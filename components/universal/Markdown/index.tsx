@@ -6,7 +6,6 @@ import { MarkdownToc } from '../Tocs'
 export const Markdown = (props: { text: string }) => {
   return (
     <KamiMarkdown
-      toc
       tocSlot={MarkdownToc}
       value={props.text}
       extendsRules={{
@@ -51,7 +50,7 @@ export const Markdown = (props: { text: string }) => {
         footnoteReference: {
           react(node, output, state) {
             const { footnoteMap, target, content } = node
-            const footnote = footnoteMap.get(content)
+            // const footnote = footnoteMap.get(content)
             // const linkCardId = (() => {
             //   try {
             //     const thisUrl = new URL(
