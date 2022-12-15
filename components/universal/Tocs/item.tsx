@@ -1,3 +1,4 @@
+import { useRootStore } from "@hooks/useStore";
 import clsx from "clsx";
 import { FC, memo, useEffect, useMemo, useRef, useState } from "react";
 import { TocProps } from ".";
@@ -18,41 +19,39 @@ export const Toc: FC<TocProps> = ({ headings: $ }) => {
     });
   }, [$]);
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeId, setActiveId] = useState("");
 
-  // useEffect(() => {
-  //   const { current: container } = containerRef;
-  //   if (!container) return;
+  const { appUIStore } = useRootStore()
 
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           // @ts-ignore
-  //           const { index } = entry.target.dataset;
-  //           console.log(index);
-  //           setActiveIndex(parseInt(index));
-  //         }
-  //       });
-  //     },
-  //     {
-  //       root: container,
-  //       rootMargin: "0px",
-  //       threshold: 1.0,
-  //     }
-  //   );
+  useEffect(() => {
 
-  //   const targets = Array.from(container.querySelectorAll(".post-content h2"));
-  //   targets.forEach((target) => {
-  //     observer.observe(target);
-  //   });
+    console.log(`-${appUIStore.viewport.h - 300
+      }px`)
 
-  //   return () => {
-  //     targets.forEach((target) => {
-  //       observer.unobserve(target);
-  //     });
-  //   };
-  // }, []);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            console.log(id)
+            setActiveId(id);
+          }
+        });
+      },
+      {
+        rootMargin: `0px -${appUIStore.viewport.h - 500}px 0px 0px`,
+        threshold: 1,
+      }
+    );
+
+    headings.forEach(({ index }) => {
+      observer.observe($[index]);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [appUIStore.viewport, headings, $]);
 
   return (
     <div className={styles['container']} ref={containerRef}>
@@ -64,13 +63,18 @@ export const Toc: FC<TocProps> = ({ headings: $ }) => {
               key={index}
               className={clsx(
                 styles.item,
-                // i === activeIndex && styles.active
               )}
+              style={{ paddingLeft: depth * 10 }}
             >
               <a
                 href={`#${title.replace(/\s/g, '-').toLowerCase()}`}
-                className={styles.text}
-                data-index={index}
+                className={
+                  clsx(
+                    styles.link,
+                    activeId === title.replace(/\s/g, '-').toLowerCase() && styles.active
+                  )
+                }
+                id={title.replace(/\s/g, '-').toLowerCase()}
                 onClick={(e) => {
                   e.preventDefault();
                   window.scrollTo({
