@@ -40,9 +40,31 @@
 
 .post-content blockquote {
   margin: 0;
-  padding: 0.8rem 0.9375rem;
-  border-left: 0.25rem solid var(--iucky-post-blockquote-bg);
-  margin-bottom: 1rem;
+  position: relative;
+  background-image: url('/blockquotes/quotesleft.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+  padding: 25px 45px 25px 50px;
+  color: var(--iucky-gray);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.post-content blockquote::after {
+  content: "";
+  display: block;
+  background-image: url(/blockquotes/quotesright.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .post-content blockquote>:last-child,
