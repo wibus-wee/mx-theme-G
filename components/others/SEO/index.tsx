@@ -7,6 +7,7 @@
  * Coding With IU
  */
 import { useStore } from '@hooks/useStore'
+import { AggregateRoot } from '@mx-space/api-client/.'
 import merge from 'lodash-es/merge'
 import { observer } from 'mobx-react-lite'
 import type { NextSeoProps } from 'next-seo'
@@ -23,7 +24,7 @@ type SEOProps = {
 export const SEO: FC<SEOProps> = observer((props) => {
   const { title, description, openGraph, ...rest } = props
   const { configStore } = useStore()
-  const userStore = configStore.getConfig().user
+  const userStore = (configStore.getConfig("aggregateData") as AggregateRoot).user
 
   const Title = `${title}`
 
@@ -35,20 +36,20 @@ export const SEO: FC<SEOProps> = observer((props) => {
         openGraph: merge(
           {
             profile: {
-              username: userStore.nickname,
+              username: userStore.name,
             },
             type: 'article',
             locale: 'zh-cn',
-            site_name: userStore.description || '',
-            description: description || userStore.description || '',
+            site_name: userStore.introduce || '',
+            description: description || userStore.introduce || '',
             article: {
-              authors: [userStore.nickname as string],
+              authors: [userStore.name as string],
             },
             title: Title,
           } as OpenGraph,
           openGraph,
         ),
-        description: description || userStore.description || '',
+        description: description || userStore.introduce || '',
         ...rest,
       }}
     />

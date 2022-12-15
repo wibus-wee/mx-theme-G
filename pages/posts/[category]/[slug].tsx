@@ -11,6 +11,7 @@ import { useReadMask } from "@hooks/useReadMask"
 import { useActionsStore } from '@hooks/useStore'
 import { Tocs } from '@components/universal/Tocs'
 import { Markdown } from "@components/universal/Markdown"
+import { SEO } from "@components/others/SEO"
 export const getServerSideProps = async (context) => {
   const { category, slug } = context.query
   const post = await apiClient.post.getPost(category, slug)
@@ -47,6 +48,10 @@ export const Post: NextPage<PostModel> = (props) => {
   }
   return (
     <>
+      <SEO 
+        title={props.title}
+        description={props.summary || props.text.slice(0, 100).toString()}
+      />
 
       <div className={styles['container']}>
         <article itemScope itemType="http://schema.org/BlogPosting">
