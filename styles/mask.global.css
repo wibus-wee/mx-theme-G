@@ -1,0 +1,62 @@
+
+.dark-mask,
+.read-mask {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: mask 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.un-read-mask {
+  animation: mask-out 0.5s ease-in-out;
+  opacity: 0;
+}
+
+@media (prefers-color-scheme: light) {
+
+  .read-mask,
+  .un-read-mask {
+    display: block;
+    background: var(--iucky-background);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .read-mask,
+  .un-read-mask {
+    animation: none;
+    opacity: inherit;
+  }
+
+  .dark-mask {
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes mask-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes mask {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

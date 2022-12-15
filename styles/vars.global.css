@@ -1,0 +1,123 @@
+
+:root {
+  --iucky-white: #fff;
+  --iucky-white-op: rgba(255, 255, 255, 0.2);
+  --iucky-black: #000;
+  --iucky-black-op: rgba(0, 0, 0, 0.2);
+  --iucky-none: #00000000;
+  --iucky-gray: #999999;
+  --iucky-gray-op: #9999992b;
+  --iucky-vip: #e5a80d;
+  --iucky-main: var(--iucky-theme);
+  --iucky-main-op: var(--iucky-theme-op);
+  --iucky-main-none: var(--iucky-theme-none);
+  --iucky-shadow-theme: 0 8px 12px -3px var(--iucky-theme-op);
+  --iucky-shadow-blackdeep: 0 2px 16px -3px rgba(0, 0, 0, .15);
+  --iucky-shadow-main: 0 8px 12px -3px var(--iucky-main-op);
+  --iucky-shadow-blue: 0 8px 12px -3px rgba(40, 109, 234, .20);
+  --iucky-shadow-white: 0 8px 12px -3px rgba(255, 255, 255, .20);
+  --iucky-shadow-black: 0 0 12px 4px rgba(0, 0, 0, .05);
+  --iucky-shadow-yellow: 0 38px 77px -26px rgba(255, 201, 62, .12);
+  --iucky-shadow-red: 0 8px 12px -3px #ee7d7936;
+  --iucky-shadow-green: 0 8px 12px -3px #87ee7936;
+  --iucky-logo-color: linear-gradient(215deg, #4584ff 0%, #cf0db9 100%);
+  --iucky-snackbar-time: 5s;
+  --style-border: 1px solid var(--iucky-card-border);
+  --style-border-always: 1px solid var(--iucky-card-border);
+  --style-border-hover: 1px solid var(--iucky-main);
+  --style-border-hover-always: 1px solid var(--iucky-main);
+  --style-border-dashed: 1px dashed var(--iucky-theme-op);
+}
+
+::selection {
+  background: var(--iucky-background-op);
+}
+
+:root {
+  --iucky-background: #fff;
+  --iucky-background-op: rgb(217, 217, 217);
+  /* --iucky-theme: #425AEF; */
+  --iucky-theme: var(--iucky-green);
+  /* --iucky-theme-op: #4259ef23; */
+  --iucky-theme-op: var(--iucky-green-op);
+  /* --iucky-theme-op-deep: #4259efdd; */
+  --iucky-theme-op-deep: var(--iucky-green-op-deep);
+  --iucky-theme-none: #4259ef01;
+  --iucky-blue: #425AEF;
+  --iucky-red: #D8213C;
+  --iucky-pink: #FF7C7C;
+  --iucky-green: #28a63f;
+  --iucky-green-op: #28a63f23;
+  --iucky-green-op-deep: #28a63fdd;
+  --iucky-yellow: #c28b00;
+  --iucky-yellow-op: #d99c001a;
+  --iucky-orange: #e38100;
+  --iucky-fontcolor: #202020;
+  --iucky-fontcolor-reverse: #fff;
+  /* --iucky-background: #f7f9fe; */
+  --iucky-reverse: #000;
+  --iucky-maskbg: rgba(255, 255, 255, 0.6);
+  --iucky-maskbgdeep: rgba(255, 255, 255, 0.8);
+  --iucky-hovertext: var(--iucky-main);
+  --iucky-ahoverbg: #F7F7FA;
+  --iucky-lighttext: var(--iucky-main);
+  --iucky-secondtext: rgba(60, 60, 67, 0.6);
+  --iucky-scrollbar: rgba(60, 60, 67, 0.4);
+  --iucky-card-btn-bg: #edf0f7;
+  --iucky-post-blockquote-bg: #dfdfdf;
+  --iucky-post-tabs-bg: #f2f5f8;
+  --iucky-secondbg: #f1f3f8;
+  --iucky-shadow-nav: 0 5px 12px -5px rgba(102, 68, 68, 0.05);
+  --iucky-card-bg: #fff;
+  --iucky-card-bg-op: var(--iucky-black-op);
+  --iucky-card-bg-none: rgba(255, 255, 255, 0);
+  --iucky-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.00);
+  --iucky-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.00);
+  --iucky-card-border: #e3e8f7;
+  --iucky-shadow-border: 0 8px 16px -4px #2c2d300c;
+  --style-border-forever: 2px solid var(--iucky-main);
+  --iucky-link-color: #F55852;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --iucky-theme: #0084FF;
+    --iucky-theme-op: #0084FF23;
+    --iucky-theme-op-deep: #0084ffdd;
+    --iucky-theme-none: #0084FF00;
+    --iucky-blue: #0084FF;
+    --iucky-red: #FF3842;
+    --iucky-pink: #FF7C7C;
+    --iucky-green: #57bd6a;
+    --iucky-yellow: #ffc93e;
+    --iucky-yellow-op: #ffc93e30;
+    --iucky-orange: #ff953e;
+    --iucky-fontcolor: #d5d5d6;
+    --iucky-fontcolor-reverse: #202020;
+    --iucky-background: #18171d;
+    --iucky-background-op: #27262f;
+    --iucky-reverse: #fff;
+    --iucky-maskbg: rgba(0, 0, 0, 0.6);
+    --iucky-maskbgdeep: rgba(0, 0, 0, 0.8);
+    --iucky-hovertext: #0A84FF;
+    --iucky-ahoverbg: #fff;
+    --iucky-lighttext: #f2b94b;
+    --iucky-secondtext: #a1a2b8;
+    --iucky-scrollbar: rgba(200, 200, 223, 0.4);
+    --iucky-card-btn-bg: #30343f;
+    --iucky-post-blockquote-bg: rgb(127, 127, 127);
+    --iucky-post-tabs-bg: #121212;
+    --iucky-secondbg: #30343f;
+    --iucky-shadow-nav: 0 5px 20px 0 rgba(28, 28, 28, 0.4);
+    --iucky-card-bg: #1d1e22;
+    --iucky-card-bg-op: var(--iucky-white-op);
+    --iucky-card-bg-none: #1d1b2600;
+    --iucky-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+    --iucky-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.0);
+    --iucky-card-border: #282829;
+    --iucky-shadow-border: 0 8px 16px -4px #00000050;
+    --style-border-forever: 2px solid var(--iucky-lighttext);
+    --iucky-link-color: #7AC088;
+  }
+}
