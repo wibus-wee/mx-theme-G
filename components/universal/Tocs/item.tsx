@@ -63,6 +63,7 @@ export const Toc: FC<TocProps> = ({ headings: $ }) => {
               key={index}
               className={clsx(
                 styles.item,
+                activeId === title.replace(/\s/g, '-').toLowerCase() && styles.active
               )}
               style={{ paddingLeft: depth * 10 }}
             >
@@ -71,7 +72,6 @@ export const Toc: FC<TocProps> = ({ headings: $ }) => {
                 className={
                   clsx(
                     styles.link,
-                    activeId === title.replace(/\s/g, '-').toLowerCase() && styles.active
                   )
                 }
                 id={title.replace(/\s/g, '-').toLowerCase()}

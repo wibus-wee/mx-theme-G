@@ -52,7 +52,7 @@
 }
 
 .item:hover {
-  transform: translateX(0.5rem);
+  transform: translateX(0.5rem) scale(1.25);
 }
 
 .text {
@@ -60,5 +60,7 @@
 }
 
 .active {
+  transition: transform .2s;
   font-weight: 600;
+  transform: translateX(0.5rem) scale(1.25);
 }
