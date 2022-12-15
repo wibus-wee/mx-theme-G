@@ -24,11 +24,11 @@ export const HighLighter: FC<Props> = observer((props) => {
   const { lang: language, content: value } = props
   const { appUIStore } = useStore()
   const { colorMode } = appUIStore
-  const handleCopy = useCallback(() => {
+
+  const handleCopy = useCallback((e: React.MouseEvent) => {
     navigator.clipboard.writeText(value)
-    message.success('复制成功')
+    e.currentTarget.innerHTML = 'Copied'
   }, [value])
-  //  const isPrintMode = appUIStore.mediaType === 'print'
 
   useInsertionEffect(() => {
     const css = loadStyleSheet(
