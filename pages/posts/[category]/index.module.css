@@ -43,6 +43,7 @@
 
 .has-cover h1 {
   position: absolute;
+  text-align: initial;
   bottom: 1.5rem;
   left: 1.5rem;
 }
@@ -56,8 +57,9 @@
   zoom: 1;
   background-color: var(--iucky-background-op);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center center;
+  filter: blur(5px) saturate(150%) brightness(1.1);
 }
 
 .header p {
@@ -114,6 +116,6 @@
 
 @media (prefers-color-scheme: dark) {
   .cover {
-    filter: brightness(0.3);
+    filter: blur(5px) saturate(150%) brightness(0.3);
   }
 }
