@@ -23,7 +23,7 @@ specifiers:
   dayjs: ^1.11.7
   eslint: 8.29.0
   eslint-config-next: 13.0.6
-  framer-motion: 7.8.1
+  framer-motion: 7.9.1
   husky: 8.0.2
   js-cookie: ^3.0.1
   less: 4.1.3
@@ -61,7 +61,7 @@ dependencies:
   clsx: 1.2.1
   cross-env: 7.0.3
   dayjs: 1.11.7
-  framer-motion: 7.8.1_biqbaboplfbrettd7655fr4n2y
+  framer-motion: 7.9.1_biqbaboplfbrettd7655fr4n2y
   js-cookie: 3.0.1
   lodash: 4.17.21
   lodash-es: 4.17.21
@@ -3428,8 +3428,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion/7.8.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-ujUbAaV7e6tElfez3OmttE000ZWLrGgETTQZRjoq+p+w4gHG97hRpzVfUhR6gshWO869UgvvI1Cn+/4euWQg+Q==}
+  /framer-motion/7.9.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-oYZkESoGsLAc5P+ycz+IrPEkXB9i+e1LeIMZczO8cHKSo5LW4r4JXan9wRjn2u77Zn59K0UK1kGjxcNyLzbFPQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
