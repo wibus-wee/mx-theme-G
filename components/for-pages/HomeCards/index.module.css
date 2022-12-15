@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 800px;
+  margin: auto;
+  -moz-animation: opacity-in 1s ease;
+  -webkit-animation: opacity-in 1s ease;
+  -o-animation: opacity-in 1s ease;
+  animation: opacity-in 1s ease;
+}
+
+@keyframes opacity-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,10 +1,10 @@
-import { Card } from '@components/widgets/Card'
-import { AggregateTop } from '@mx-space/api-client/.'
+import { AggregateTop } from '@mx-space/api-client'
 import { apiClient } from '@utils/request.util'
 import { omit } from 'lodash'
 import type { NextPage } from 'next'
 import { NextSeo } from 'next-seo'
-import styles from "@styles/Home.module.css"
+import { useInitialData } from '@hooks/useStore'
+import { HomeCards } from '@components/for-pages/HomeCards'
 
 export const getServerSideProps = async () => {
   const aggregateData = await apiClient.aggregate.getTop(8)
@@ -18,28 +18,18 @@ export const getServerSideProps = async () => {
 
 const Home: NextPage<AggregateTop> = (props) => {
 
+  const initialData = useInitialData()
+
   return (
     <>
       <NextSeo
-        title={"Next.js + TypeScript + Valtio Starter"}
-        description={"Next.js + TypeScript + Valtio Starter"}
+        title={`${initialData.seo.title} · ${initialData.seo.description}`}
+        description={initialData.seo.description}
       />
 
-      <div className={styles.container}>
-        {
-          props.posts?.map((post, index) => {
-            return (
-              <Card 
-                key={index}
-                date={post.created}
-                category={post.category}
-                title={post.title}
-                slug={post.slug}
-              />
-            )
-          })
-        }
-      </div>
+      <HomeCards
+        {...props}
+      />
     </>
   )
 }
