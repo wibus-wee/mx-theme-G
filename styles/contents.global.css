@@ -239,13 +239,16 @@ screen and (min--moz-device-pixel-ratio: 1.5) {
   }
 }
 
+.post-content pre {
+  overflow: hidden !important;
+}
+
 .post-content pre>code,
 .comment-content pre>code {
   white-space: pre;
 }
 
-.post-content pre code,
-.comment-content pre code {
+.post-content pre code {
   margin: 0;
   display: inline;
   background-color: transparent;
@@ -257,6 +260,14 @@ screen and (min--moz-device-pixel-ratio: 1.5) {
   padding: 0.2rem 0.4rem;
   border-radius: 0.1875rem;
   background-color: rgba(0, 0, 0, 0.03);
+
+  /* 
+    We rewrite the text-shadow style
+    to make the code more readable
+
+    It's found in the one-dark.css
+  */
+  text-shadow: none !important;
 }
 
 .post-content pre,
@@ -271,11 +282,11 @@ screen and (min--moz-device-pixel-ratio: 1.5) {
 
 .line-numbers .line-numbers-rows {
   border: none !important;
-  top: -10px !important;
+  top: -12px !important;
 }
 
 .line-numbers .line-numbers-rows>:first-child {
-  padding-top: 10px !important;
+  padding-top: 12px !important;
 }
 
 .line-numbers .line-numbers-rows>:last-child {
