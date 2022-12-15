@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
         </Head>
 
 
-        <body id="app" className="loading">
+        <body id="app" className="">
           <Main />
           <NextScript />
         </body>

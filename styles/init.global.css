@@ -21,6 +21,12 @@ body::before {
   background-position: center 0;
 }
 
+
+body::before {
+  background-image: url(https://cdn.exia.xyz/img/blog/mountain.jpg);
+  /* background-image: url(https://www.bing.com/th?id=OHR.KilimanjaroElephants_ZH-CN3779609103_UHD.jpg); */
+}
+
 a {
   color: inherit;
   text-decoration: none;
