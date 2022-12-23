@@ -9,7 +9,7 @@ specifiers:
   '@innei-util/eslint-config-react-ts': 0.8.2
   '@innei/markdown-to-jsx': 7.1.3-beta.2
   '@innei/prettier': 0.9.6
-  '@mx-space/api-client': 1.0.0-beta.3
+  '@mx-space/api-client': 1.0.2
   '@mx-space/kami-design': 0.1.3
   '@types/lodash': 4.14.191
   '@types/lodash-es': ^4.17.6
@@ -55,7 +55,7 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.2.0_z27bm67dtmuyyvss23ckjdrcuy
   '@icon-park/react': 1.4.2_biqbaboplfbrettd7655fr4n2y
   '@innei/markdown-to-jsx': 7.1.3-beta.2_react@18.2.0
-  '@mx-space/api-client': 1.0.0-beta.3
+  '@mx-space/api-client': 1.0.2
   '@mx-space/kami-design': 0.1.3_biqbaboplfbrettd7655fr4n2y
   axios: 1.2.1
   clsx: 1.2.1
@@ -1580,8 +1580,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@mx-space/api-client/1.0.0-beta.3:
-    resolution: {integrity: sha512-HvMUVO9vu9xGiNHZChYbPOzLB6sVe2Ro18jZxhtIQ+RfXu7P60o8UV4eKRJueOu4GUr2OqLmCLXrPZyFNNjTKw==}
+  /@mx-space/api-client/1.0.2:
+    resolution: {integrity: sha512-8efMizuF0Clqysv+kAGbVxuta18X9qWq1bksGB3Gn4TfgauwzrS62JWlrNhceYMfcYWldsEU90Pp8hq/TBjVww==}
     engines: {pnpm: '>=6'}
     dev: false
 
@@ -1596,7 +1596,7 @@ packages:
     dependencies:
       '@floating-ui/react-dom': 1.0.1_biqbaboplfbrettd7655fr4n2y
       '@formkit/auto-animate': 1.0.0-beta.5
-      '@mx-space/api-client': 1.0.0-beta.3
+      '@mx-space/api-client': 1.0.2
       clsx: 1.2.1
       css-spring: 4.1.0
       lodash-es: 4.17.21
