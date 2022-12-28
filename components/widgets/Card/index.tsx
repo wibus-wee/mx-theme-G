@@ -31,7 +31,6 @@ export const Card = ({ date, category, title, slug, isNote }: ICard) => {
             )
           }
         </span>
-        <span>{date.split("T")[0]}</span>
       </div>
       <div className={styles.wrap} />
       <div className={styles.image}

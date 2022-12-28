@@ -16,7 +16,7 @@ const genUUID = () => {
   })
 }
 
-const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT || 'http://192.168.3.4:2333'
+const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT || 'https://server.iucky.cn/api/v2'
 export const apiClient = createClient(axiosAdaptor)(endpoint)
 
 const $axios = axiosAdaptor.default

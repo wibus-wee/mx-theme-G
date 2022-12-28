@@ -9,6 +9,7 @@ import { FC, memo, PropsWithChildren, useMemo } from 'react'
 import { BaseLayout } from '@layouts/BaseLayout'
 import ErrorLayout from '@layouts/ErrorLayout'
 import { Header } from '@components/widgets/Header'
+import { Footer } from '@components/widgets/Footer'
 
 interface DataModel {
   initData: any
@@ -60,6 +61,7 @@ const Wrapper: FC<PropsWithChildren> = memo((props) => {
       <BaseLayout>
         <Header />
         {props.children}
+        <Footer />
       </BaseLayout>
     </>
   )
