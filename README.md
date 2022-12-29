@@ -1,4 +1,4 @@
-# <img src="https://user-images.githubusercontent.com/62133302/206900264-d7a4154f-9dc3-43d3-9697-f0989402e83b.png" height="50" /> <small>A Graceful Mix Space Theme</small>
+<img src="https://repository-images.githubusercontent.com/575696353/17bfa877-18b2-4bef-9df0-092ce0f7dec1" />
 
 <pre align="center">
 I am developing in public. But this theme is not ready for use.
