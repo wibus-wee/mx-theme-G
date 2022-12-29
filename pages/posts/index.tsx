@@ -5,6 +5,7 @@ import { apiClient } from "@utils/request.util";
 import { NextPage, NextPageContext } from "next";
 import styles from "./index.module.css"
 import { motion } from "framer-motion"
+
 export async function getServerSideProps(ctx: NextPageContext): Promise<{ props: IPostPage }> {
   const { page: ctxPage } = ctx.query;
   const page = Number.isNaN(ctxPage) || !ctxPage ? 1 : Number(ctxPage);

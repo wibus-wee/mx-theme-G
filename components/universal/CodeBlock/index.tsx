@@ -8,10 +8,6 @@ import { loadStyleSheet, loadScript } from '@utils/load.util'
 import { observer } from 'mobx-react-lite'
 import type { FC } from 'react'
 import React, { useCallback, useInsertionEffect, useRef } from 'react'
-import { message } from 'react-message-popup'
-
-
-
 
 import styles from './index.module.css'
 

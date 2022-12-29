@@ -8,12 +8,20 @@ I am developing in public. But this theme is not ready for use.
 
 ## Features
 
-- [x] SSR Support
-- [x] SEO Friendly
-- [x] Native Dark Mode Support
-- [x] Animation Support
+- 🔭 服务端渲染支持，推动网页性能与SEO，加强用户体验
+- 🌈 动态主题颜色支持，使用 CSS 变量配置自由主题颜色
+- 📊 Umami 统计系统支持，~~暂不支持其他统计系统~~
+- 📝 评论系统支持，支持载入自定义表情包，增加评论体验
+- 📚 文章目录支持，随文章滚动自动定位，增加阅读体验
+- 📦 代码高亮支持，~~暂不支持自定义代码高亮主题~~
+- 📖 阅读能力增强，尽可能地提升阅读沉浸感
 
-> Original author: [youranreus](https://github.com/youranreus) / [G](https://github.com/youranreus/G)
+> 原作: [youranreus](https://github.com/youranreus) / [G](https://github.com/youranreus/G)
+
+## Issues
+
+- ❌ 仅对文章有效，页面无法使用
+- ❌ getInitialProps 无法获取到自定义元数据
 
 ## Custom Metas
 
