@@ -1,10 +1,5 @@
 <img src="https://repository-images.githubusercontent.com/575696353/17bfa877-18b2-4bef-9df0-092ce0f7dec1" />
 
-<pre align="center">
-I am developing in public. But this theme is not ready for use.
-🧪 Working in Progress
-</pre>
-
 ## Features
 
 - 🔭 服务端渲染支持，推动网页性能与SEO，加强用户体验
