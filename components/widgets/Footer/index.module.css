@@ -32,7 +32,7 @@
 }
 
 .content a {
-  transition: color .2s;
+  transition: color .2s, transform .2s;
 }
 
 .content_right {
@@ -78,6 +78,7 @@
 
 .content a:hover {
   color: #fff;
+  transform: translateY(-2px);
 }
 
 @media (prefers-color-scheme: dark) {
