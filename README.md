@@ -20,7 +20,9 @@ I am developing in public. But this theme is not ready for use.
 ## Issues
 
 - ❌ 仅对文章与页面支持，**生活点滴等其他页面暂不支持**
-- ❌ getInitialProps 无法获取到自定义元数据
+- ❌ getInitialProps 无法获取到自定义元数据，数据兜底可能会出现问题
+- ❌ 暂时未对 Kami 拓展语法进行支持
+- ❌ ~~用了不会变成猫猫~~
 
 ## Custom Metas
 
