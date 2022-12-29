@@ -1,5 +1,4 @@
-# <img src="https://user-images.githubusercontent.com/62133302/206900264-d7a4154f-9dc3-43d3-9697-f0989402e83b.png" height="50" />
-A Graceful Mix Space Theme
+# <img src="https://user-images.githubusercontent.com/62133302/206900264-d7a4154f-9dc3-43d3-9697-f0989402e83b.png" height="50" /> <small>A Graceful Mix Space Theme</small>
 
 <pre align="center">
 I am developing in public. But this theme is not ready for use.
@@ -20,7 +19,7 @@ I am developing in public. But this theme is not ready for use.
 
 ## Issues
 
-- ❌ 仅对文章有效，页面无法使用
+- ❌ 仅对文章与页面支持，**生活点滴等其他页面暂不支持**
 - ❌ getInitialProps 无法获取到自定义元数据
 
 ## Custom Metas
