@@ -7,12 +7,10 @@ export const useReadMask = () => {
   const handleScroll = () => {
     const postContent = document.querySelector('.post-content');
     if (postContent) {
-      // 获取文章内容距离上一个元素顶部的高度
       const postContentTop = postContent.getBoundingClientRect().top;
-      // 获取文章内容距离下一个元素的高度
       const postContentBottom = postContent.getBoundingClientRect().bottom;
-      // 如果进入了文章内容区域
-      if (postContentTop < 0 && postContentBottom - 500 > 0) {
+      console.log(postContentTop, postContentBottom);
+      if (postContentTop < 0 && postContentBottom - $RootStore.appUIStore.viewport.h > 0) {
         setShowMask(true);
         $RootStore.appUIStore.setReadMask(true);
       } else {
@@ -23,10 +21,23 @@ export const useReadMask = () => {
     
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+  const throttleHandleScroll = () => {
+    let timer: any = null;
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (timer) {
+        return;
+      }
+      timer = setTimeout(() => {
+        handleScroll();
+        timer = null;
+      }, 100);
+    };
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', throttleHandleScroll());
+    return () => {
+      window.removeEventListener('scroll', throttleHandleScroll());
     };
   }, []);
 

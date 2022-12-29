@@ -8,7 +8,6 @@ import { useState } from "react"
 import { Twindow } from "@components/tools/Twindow"
 import clsx from "clsx"
 import { useReadMask } from "@hooks/useReadMask"
-import { useActionsStore } from '@hooks/useStore'
 import { Tocs } from '@components/universal/Tocs'
 import { Markdown } from "@components/universal/Markdown"
 import { SEO } from "@components/others/SEO"
@@ -22,7 +21,6 @@ export const getServerSideProps = async (context) => {
 
 export const Post: NextPage<PostModel> = (props) => {
   useReadMask()
-  const actions = useActionsStore()
 
   const [like, setLike] = useState({
     count: props.count.like,
