@@ -1,0 +1,13 @@
+.button {
+  font-size: .875rem;
+  background: var(--iucky-background);
+  padding: 10px 20px;
+  border-radius: 1000rem;
+  border: 1px solid #EEE;
+  transition: transform .2s ease;
+  color: var(--iucky-fontcolor);
+}
+
+.button:hover {
+  transform: scale(1.1);
+}

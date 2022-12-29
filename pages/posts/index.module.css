@@ -5,7 +5,7 @@
   flex-wrap: wrap;
   width: 800px;
   margin: auto;
-  animation: opacity-in 1s ease;
+  /* animation: opacity-in 1s ease; */
 }
 
 @keyframes opacity-in {
