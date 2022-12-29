@@ -12,6 +12,9 @@ import { Router } from 'next/router'
 import QProgress from 'qier-progress'
 import { useEffect } from 'react'
 import { useTrack } from './useTrack'
+import { animateUriFactory } from 'animate-uri'
+
+const animateInstance = animateUriFactory()
 
 export const useRouterEvent = () => {
   const { pageView } = useTrack();
@@ -23,7 +26,7 @@ export const useRouterEvent = () => {
     if (isClientSide()) {
       ; (window as any).process = Progress
     }
-    Router.events.on('routeChangeStart', () => {
+    Router.events.on('routeChangeStart', (url) => {
       // animation('out')
 
       Twindow({
@@ -33,9 +36,10 @@ export const useRouterEvent = () => {
 
       Progress.start()
       window.scrollTo({ top: 0, behavior: 'smooth' })
-      history.backPath = history.backPath
-        ? [...history.backPath, history.state.as]
-        : [history.state.as]
+      // history.backPath = history.backPath
+      //   ? [...history.backPath, history.state.as]
+      //   : [history.state.as]
+      animateInstance?.start(url)
     })
 
     Router.events.on('routeChangeComplete', (url) => {
@@ -45,6 +49,7 @@ export const useRouterEvent = () => {
         title: '页面切换完成啦 (๑•̀ㅂ•́)و✧',
         text: "页面加载完成啦，欢迎回来",
       })
+      animateInstance?.stop()
       pageView(url)
     })
 
