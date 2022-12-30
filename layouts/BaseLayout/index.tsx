@@ -1,5 +1,6 @@
 
 import { $RootStore } from "@contexts/root-store";
+import { useConsole } from "@hooks/useConsole";
 import { useResetDirection } from "@hooks/useResetDirection";
 import { useRouterEvent } from "@hooks/useRouterEvents";
 import { useActionsStore, useGConfig, useRootStore } from "@hooks/useStore";
@@ -11,6 +12,7 @@ import styles from "./index.module.css"
 export const BaseLayout: React.FC<PropsWithChildren> = observer((props) => {
   useResetDirection()
   useRouterEvent();
+  useConsole();
 
   useEffect(() => {
     $RootStore.appUIStore.updateViewport()
